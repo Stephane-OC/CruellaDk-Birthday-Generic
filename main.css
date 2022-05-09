@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@604;800&family=Quicksand:wght@500;550;700&display=swap');
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  font-family: "Dosis";
+  background-image: "Video Cruella/Stars.mp4";
+  color: #fff;
+}
+
+.conteiner1 {
+  width: 60%;
+
+  /* Pushed to the midle of the Vieport*/
+  margin-top: 50vh;
+}
+
+.conteiner2 {
+  width: 40%;
+}
+
+.imgConteiner {
+  width: 10em;
+  height: 8em;
+  object-fit: cover;
+  border: #008cff41 solid 5px;
+  border-radius: 10px;
+}
+
+.vidConteiner {
+  width: 35%;
+  height: 14em;
+  object-fit: cover;
+  border-radius: 10px;
+  border: #ff00ff1e solid 2px;
+
+}
+
+.sizeImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexAlign {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  vertical-align: center;
+  vertical-align: middle;
+
+}
+
+.vidPosition {
+  position: absolute;
+  /* Pushed to the midle of the height  */
+  top: 50%;
+
+  /* Pulled to the midle of the height */
+  transform: translateY(-50%);
+}
+
+.alignFlex {
+  display: flex;
+}
+
+video#bgvid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+
+  background-size: cover;
+}
+
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.star-generic {
+  font-family: "Dosis";
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.lastTitle {
+  margin-top: 13em;
+  font-weight: 900;
+  font-size: 3em;
+  margin-right: 0.2em;
+  line-height: 1.5em;
+}
+
+.marginBottom {
+  margin-bottom: 4em;
+}
+
+.marginTop {
+  margin-top: 25em;
+}
+
+/*  Crawl Animations here, this animation is used to make all the credits automatically  **
+**  come from bottom to upper screen                                                     **
+**  a linear crawl is used with 80s of action, here i control how much quickly will      **
+**  the credits will scroll                                                              */
+
+.crawl {
+  position: relative;
+  top: 17000px;
+  transform-origin: 100%;
+  animation: crawl 80s linear;
+}
+
+.crawl>.title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl>.title h1 {
+  font-family: "Dosis";
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(0deg) translateZ(0);
+  }
+
+  100% {
+    top: -17000px;
+    transform: rotateX(0deg) translateZ(0px);
+  }
+}
+
+/* Animations for The titles and the Birthday message */
+
+.colorfull {
+  font-weight: bolder;
+  font-family: "Dosis";
+  background: linear-gradient(60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(300, 71%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%));
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
+
+.colorfull2 {
+  font-weight: bolder;
+  font-family: "Dosis";
+  background: linear-gradient(60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%));
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Animations gradient border used to the border of the "Crab" video */
+
+.gradient-border {
+  --border-width: 2px;
+  width: 16em;
+  height: 9.1em;
+  font-family: Lato, sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: white;
+  background: #222;
+  border-radius: var(--border-width);
+}
+
+.gradient-border::after {
+  position: absolute;
+  content: "";
+  top: calc(-1 * var(--border-width));
+  left: calc(-1 * var(--border-width));
+  z-index: -1;
+  width: calc(100% + var(--border-width) * 2);
+  height: calc(100% + var(--border-width) * 2);
+  background: linear-gradient(60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%));
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: calc(2 * var(--border-width));
+  animation: moveGradient 4s alternate infinite;
+}
+
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
